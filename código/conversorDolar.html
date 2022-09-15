@@ -9,39 +9,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Conversor de Moedas</title>
+    <title>Conversor</title>
 </head>
 <body>
     <header>
-        <h1>Conversor de Moedas</h1>
-        <p>Descubra os valores em dólar!</p>
+        <h1>Conversor Real para Dólar</h1>
+        <p>Dólar nos últimos meses: US$ 5.21</p>
     </header>
     <main>
         <div class="container">
-            <h3>Insira o valor:</h3>
-            <input type="number" id="resultado" size="2">
-            <p id="convertido">US$</p>
-        
-            <button class="buttonConv" type="submit" onclick="Converter()">Converter</button>
+            <div class="row">
+              <h3>Insira o valor:</h3>
+                <input type="number" id="resultado" size="2">
+                <p id="convertido">US$</p>
+                <button class="buttonConv" type="submit" onclick="Converter()">Converter</button>  
+            </div>
+            <div class="row">
+                <a href="conversorReal.html"><button class="buttonRV">Conversor Dólar para Real</button></a>
+            </div> 
         </div>
-
         <script>
             function Converter(){
                 var resultadoElemento = document.getElementById ('resultado');//Pega o id
                 var resultado = resultadoElemento.value;//Pega só o valor do id
                 var resultadoEmReal = parseFloat (resultado);//Converte de string para float
-                var resultadoEmDolar = resultadoEmReal / 5;// converte para dólar
+                var resultadoEmDolar = resultadoEmReal / 5.21;// converte para dólar
                 //
                 //
                 var conversãoElemento = document.getElementById ('convertido');
                 var conversão = "US$" + resultadoEmDolar;
-                conversãoElemento.innerHTML = conversão;
-
-                console.log (resultadoEmDolar);
-                 
+                conversãoElemento.innerHTML = conversão;//mostra o valor
             }
-
-        </script>
+        </script> 
     </main>
 </body>
 </html>

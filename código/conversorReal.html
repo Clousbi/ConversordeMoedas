@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Conversor</title>
+</head>
+<body>
+    <header>
+        <h1>Conversor Dólar para Real</h1>
+        <p>Dólar nos últimos meses: US$ 5.21</p>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+              <h3>Insira o valor:</h3>
+                <input type="number" id="resultado" size="2">
+                <p id="convertido">R$</p>
+                <button class="buttonConv" type="submit" onclick="Converter()">Converter</button>  
+            </div>
+            <div class="row">
+                <a href="conversorDolar.html"><button class="buttonRV">Conversor Real para Dólar</button></a>
+            </div>   
+        </div>
+        <script>
+            function Converter(){
+                var resultadoElemento = document.getElementById ('resultado');//Pega o id
+                var resultado = resultadoElemento.value;//Pega só o valor do id
+                var resultadoEmDolar = parseFloat (resultado);//Converte de string para float
+                var resultadoEmReal = resultadoEmDolar * 5.21;// converte para dólar
+                //
+                //
+                var conversãoElemento = document.getElementById ('convertido');
+                var conversão = "R$" + resultadoEmReal;
+                conversãoElemento.innerHTML = conversão;//mostra o valor   
+            }
+        </script>
+    </main>
+</body>
+</html>
