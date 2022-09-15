@@ -19,9 +19,29 @@
     <main>
         <div class="container">
             <h3>Insira o valor:</h3>
-            <p id="resultado">R$</p>
-            <button class="buttonConv">Converter</button>
+            <input type="number" id="resultado" size="2">
+            <p id="convertido">US$</p>
+        
+            <button class="buttonConv" type="submit" onclick="Converter()">Converter</button>
         </div>
+
+        <script>
+            function Converter(){
+                var resultadoElemento = document.getElementById ('resultado');//Pega o id
+                var resultado = resultadoElemento.value;//Pega só o valor do id
+                var resultadoEmReal = parseFloat (resultado);//Converte de string para float
+                var resultadoEmDolar = resultadoEmReal / 5;// converte para dólar
+                //
+                //
+                var conversãoElemento = document.getElementById ('convertido');
+                var conversão = "US$" + resultadoEmDolar;
+                conversãoElemento.innerHTML = conversão;
+
+                console.log (resultadoEmDolar);
+                 
+            }
+
+        </script>
     </main>
 </body>
 </html>
